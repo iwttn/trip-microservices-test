@@ -1,0 +1,13 @@
+{
+  "name": "tickets-sale-microservices",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev:tsm:search" : "cd Search && npm run dev",
+    "dev:start" : "npm run dev:tsm:search"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
