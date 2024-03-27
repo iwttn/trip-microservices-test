@@ -6,7 +6,8 @@ async function getAllTrips() {
     try {
         const response = await conn.query<RowDataPacket[]>('CALL get_available_trips();');
         return response[0][0];
-    } catch (err) {
+    } catch (err : any) {
+        console.error(err.message)
         throw new Error("Error in internal server");
     }
 };
@@ -15,7 +16,8 @@ async function getTripByPreference(paramsTrip : Trip) {
     try {
         const response = await conn.query<RowDataPacket[]>('CALL get_trip_by_preference(?, ?);', Object.values(paramsTrip));
         return response[0][0];
-    } catch (err) {
+    } catch (err : any) {
+        console.error(err.message)
         throw new Error("Error in internal server");
     }
 };

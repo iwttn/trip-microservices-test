@@ -4,8 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev:tsm:search" : "cd Search && npm run dev",
-    "dev:start" : "npm run dev:tsm:search"
+    "dev:tsm:search" : "cd search && npm run dev",
+    "dev:tsm:reserve" : "cd reserve && npm run start:dev",
+    "dev" : "npm run dev:tsm:reserve && npm run dev:tsm:search"
   },
   "keywords": [],
   "author": "",
