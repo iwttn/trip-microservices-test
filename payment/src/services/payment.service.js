@@ -1,7 +1,7 @@
 import fs from "node:fs/promises";
 import { v4 as uuidv4 } from "uuid";
 
-export async function createPaymentService(payment) {
+export async function createPaymentService({indentifierReserve , passengersData}) {
   try {
     const mockPath = `${process.cwd()}/src/mocks/payments.mock.json`;
     const mockPayments = await fs.readFile(mockPath, "utf-8");
@@ -14,7 +14,8 @@ export async function createPaymentService(payment) {
 
     const jsonPayments = JSON.parse(mockPayments);
     jsonPayments.payments.push({
-      reserves: payment,
+      reserves: indentifierReserve,
+      passengers: passengersData,
       paymentCode,
       paymentStatus: 0,
     });

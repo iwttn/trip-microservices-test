@@ -57,11 +57,10 @@ export class ReserveService {
         throw new Error('Error al generar la reserva.');
       }
 
-      const { data } = await axios.post(
-        `http://localhost:3003/api/payment`,
+      const { data } = await axios.post(`http://localhost:3003/api/payment`, {
         indentifierReserve,
-      );
-        
+        passengersData,
+      });
 
       await this.seatRepository.update(
         { idTrip: { id: idTrip }, seatNumber: In(seatDataToUpdate) },
@@ -71,7 +70,7 @@ export class ReserveService {
       return {
         message: 'Reserver creada',
         reserveIds: indentifierReserve,
-        paymentCode : data.paymentCode ?? ''
+        paymentCode: data?.paymentCode ?? '',
       };
     } catch (err) {
       console.error(err.message);

@@ -1,1 +1,59 @@
-{"payments":[{"reserves":[{"id":35},{"id":36}],"paymentCode":"1dc6ee2c-cd11-4eda-9bb1-3a6fe57e4a6d","paymentStatus":1},{"reserves":[{"id":37},{"id":38}],"paymentCode":"071ab83d-af88-4566-badd-f11e350bab61","paymentStatus":0},{"reserves":[{"id":39},{"id":40}],"paymentCode":"4e888a4e-c9cb-4ad4-b0cf-a36248e669a1","paymentStatus":0},{"reserves":[{"id":41},{"id":42}],"paymentCode":"011a4c86-1855-46e3-ae31-505de1341485","paymentStatus":1}]}
+{
+  "payments": [
+    {
+      "reserves": [{ "id": 35 }, { "id": 36 }],
+      "paymentCode": "1dc6ee2c-cd11-4eda-9bb1-3a6fe57e4a6d",
+      "paymentStatus": 1
+    },
+    {
+      "reserves": [{ "id": 37 }, { "id": 38 }],
+      "paymentCode": "071ab83d-af88-4566-badd-f11e350bab61",
+      "paymentStatus": 0
+    },
+    {
+      "reserves": [{ "id": 39 }, { "id": 40 }],
+      "paymentCode": "4e888a4e-c9cb-4ad4-b0cf-a36248e669a1",
+      "paymentStatus": 0
+    },
+    {
+      "reserves": [{ "id": 41 }, { "id": 42 }],
+      "paymentCode": "011a4c86-1855-46e3-ae31-505de1341485",
+      "paymentStatus": 1
+    },
+    {
+      "reserves": [{ "id": 43 }, { "id": 44 }],
+      "paymentCode": "3ec7f532-047f-43d0-ba49-9f489062559d",
+      "paymentStatus": 0
+    },
+    {
+      "reserves": [{ "id": 45 }, { "id": 46 }],
+      "paymentCode": "63f53820-c7f8-4fd7-999d-aab6f30d5a33",
+      "paymentStatus": 0
+    },
+    {
+      "reserves": [{ "id": 47 }, { "id": 48 }],
+      "passengers": [
+        {
+          "name": "Brian",
+          "lastname": "Palpan",
+          "document": "72973280",
+          "baggage": "Mochila 3 kilos",
+          "id": 63,
+          "createdAt": "2024-03-28T00:32:32.000Z",
+          "updatedAt": "2024-03-28T00:32:32.000Z"
+        },
+        {
+          "name": "Hugo",
+          "lastname": "Solorzano",
+          "document": "72973280",
+          "baggage": "Mochila 1 kilos",
+          "id": 64,
+          "createdAt": "2024-03-28T00:32:32.000Z",
+          "updatedAt": "2024-03-28T00:32:32.000Z"
+        }
+      ],
+      "paymentCode": "e15557d4-9f2b-4316-a6c4-5dd0c21cae75",
+      "paymentStatus": 0
+    }
+  ]
+}
