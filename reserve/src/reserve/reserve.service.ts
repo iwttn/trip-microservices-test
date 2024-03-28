@@ -3,9 +3,9 @@ import { InjectRepository } from '@nestjs/typeorm';
 import { Reserve } from './entities/reserve.entity';
 import { In, Repository } from 'typeorm';
 import { Seat } from './entities/seat.entity';
-import { Trip } from './entities/trip.entity';
 import { createReserveDto } from './dto/create-reserve.dto';
 import { Passenger } from './entities/passenger.entity';
+import axios from 'axios';
 
 @Injectable()
 export class ReserveService {
@@ -57,20 +57,25 @@ export class ReserveService {
         throw new Error('Error al generar la reserva.');
       }
 
+      const { data } = await axios.post(
+        `http://localhost:3003/api/payment`,
+        indentifierReserve,
+      );
+        
+
       await this.seatRepository.update(
         { idTrip: { id: idTrip }, seatNumber: In(seatDataToUpdate) },
         { taken: true },
       );
 
       return {
-        message : "Reserver creada",
-        reserveIds : indentifierReserve
+        message: 'Reserver creada',
+        reserveIds: indentifierReserve,
+        paymentCode : data.paymentCode ?? ''
       };
-
     } catch (err) {
       console.error(err.message);
       throw new Error(err.message);
     }
   }
-
 }
