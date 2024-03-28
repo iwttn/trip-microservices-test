@@ -10,7 +10,7 @@ export class Passenger {
   name: string;
 
   @Index('users_IDX_2')
-  @Column({ type: 'varchar', name: 'lastname', length: 128})
+  @Column({ type: 'varchar', name: 'lastname', length: 128 })
   lastname: string;
 
   @Index('users_IDX_3')
@@ -18,14 +18,18 @@ export class Passenger {
   document: string;
 
   @Index('users_IDX_4')
-  @Column({ type : 'varchar', length : 256, nullable : true })
-  baggage : string;
+  @Column({ type: 'int', nullable: false })
+  seat: number;
 
   @Index('users_IDX_5')
+  @Column({ type: 'varchar', length: 256, nullable: true })
+  baggage: string;
+
+  @Index('users_IDX_6')
   @Column({ type: 'timestamp', name: 'created_at', default: () => 'CURRENT_TIMESTAMP' })
   createdAt: Date;
 
-  @Index('users_IDX_6')
+  @Index('users_IDX_7')
   @Column({ type: 'timestamp', name: 'updated_at', default: () => 'CURRENT_TIMESTAMP' })
   updatedAt: Date;
 }

@@ -34,12 +34,10 @@ export class ReserveService {
   async createReserve(reserve: createReserveDto) {
     try {
       const { passengers, idTrip } = reserve;
-      const passengersData = passengers.map(({ seat, ...rest }) => rest);
-
       const seatDataToUpdate = passengers.map(({ seat }) => seat);
-
+      
       const { identifiers: passengerIdentifiers } =
-        await this.passengerRepository.insert(passengersData);
+        await this.passengerRepository.insert(passengers);
 
       if (!passengerIdentifiers || passengerIdentifiers.length === 0) {
         throw new Error('Error a registrar los pasajeros.');
@@ -59,7 +57,7 @@ export class ReserveService {
 
       const { data } = await axios.post(`http://localhost:3003/api/payment`, {
         indentifierReserve,
-        passengersData,
+        passengers
       });
 
       await this.seatRepository.update(
